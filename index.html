@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umurunga Family</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        primaryDark: '#1e40af',
+                        secondary: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .donate-btn {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+        }
+        .donate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(37, 99, 235, 0.4);
+        }
+        .donate-btn:active {
+            transform: translateY(0);
+        }
+        .header-logo {
+            height: 3rem;
+        }
+        @media (min-width: 640px) {
+            .header-logo {
+                height: 4rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .header-logo {
+                height: 5rem;
+            }
+        }
+        
+        /* Hero Slider Styles */
+        .hero-slider {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+        .slide-overlay {
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .slide-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        .slider-nav {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            z-index: 20;
+        }
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .slider-dot.active {
+            background: white;
+        }
+        
+        /* Card hover effects */
+        .activity-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .team-card {
+            transition: transform 0.3s ease;
+        }
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+    <!-- Header will be loaded here by JavaScript -->
+    <div id="header-container"></div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section with Slider -->
+        <section class="hero-slider pt-32">
+            <!-- Slide 1 -->
+            <div class="slide active" style="background-image: url('images/hero3.jpg');">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Building Peace and Unity Among Youth</h2>
+                    <p class="text-xl max-w-2xl mx-auto mb-8">Umurunga Family is an inclusive organization in Rwanda dedicated to sustainable peace and youth development.</p>
+                    <a href="#" class="mt-8 inline-block donate-btn bg-primary hover:bg-primaryDark text-white font-bold py-3 px-6 rounded-full text-lg">
+                        Support Our Cause <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="slide" style="background-image: url('images/hero1.jpg');">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Combating Youth Trauma</h2>
+                    <p class="text-xl max-w-2xl mx-auto mb-8">Helping youth overcome trauma and find resilience through counseling and community support.</p>
+                    <a href="#" class="mt-8 inline-block donate-btn bg-primary hover:bg-primaryDark text-white font-bold py-3 px-6 rounded-full text-lg">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="slide" style="background-image: url('images/hero2.jpg');">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Fighting Discrimination</h2>
+                    <p class="text-xl max-w-2xl mx-auto mb-8">Promoting equality and love without bias through education and advocacy programs.</p>
+                    <a href="#" class="mt-8 inline-block donate-btn bg-primary hover:bg-primaryDark text-white font-bold py-3 px-6 rounded-full text-lg">
+                        Join Us <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Slider Navigation Dots -->
+            <div class="slider-nav">
+                <div class="slider-dot active" data-slide="0"></div>
+                <div class="slider-dot" data-slide="1"></div>
+                <div class="slider-dot" data-slide="2"></div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                    <!-- Mission -->
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-bullseye text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-center mb-4 text-primary">Our Mission</h3>
+                        <p class="text-gray-700 text-center">
+                            To promote sustainable peace, support youth in overcoming trauma, and build a discrimination-free society based on unconditional love.
+                        </p>
+                    </div>
+                    
+                    <!-- Vision -->
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-eye text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-center mb-4 text-primary">Our Vision</h3>
+                        <p class="text-gray-700 text-center">
+                            To be a leading organization in building development based on peace, unity, and prioritizing the value of a good quality of life in the wider community.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Activities -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-4 text-primary">Featured Activities</h2>
+                <p class="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                    Discover our impactful programs and initiatives that are making a difference in communities across Rwanda.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Activity 1 -->
+                    <div class="activity-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-blue-100 flex items-center justify-center">
+                            <img src="images/StreetChildren.jpg" alt="Community Dialogue" class="h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">24 May 2025: Umurunga Family with Street Children at Kigali city.</h3>
+                            <p class="text-gray-700 mb-4">
+                                On this day, we spent quality time with street children in Kigali city, sharing meals, listening to their stories, and giving them hope for a brighter future.
+                            </p>
+                            <a href="activities.html" class="text-primary font-semibold hover:underline">Learn more →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Activity 2 -->
+                    <div class="activity-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-blue-100 flex items-center justify-center">
+                            <img src="images/Survivor.jpg" alt="Peace Workshop" class="h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">25 June 2025: Umurunga Family Visited genocide Survivor from Musanze</h3>
+                            <p class="text-gray-700 mb-4">
+                                We visited a  genocide survivor in Musanze, offering emotional support and sharing a moment of healing and togetherness.
+                            </p>
+                            <a href="activities.html" class="text-primary font-semibold hover:underline">Learn more →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Activity 3 -->
+                    <div class="activity-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-blue-100 flex items-center justify-center">
+                            <img src="images/insurance.jpg" alt="Unity Festival" class="h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">26 July 2025: Umurunga Family paid Health insurance for 20 people families</h3>
+                            <p class="text-gray-700 mb-4">
+                                To promote better health and security, we proudly covered health insurance for 20 families, ensuring they have access to medical care.
+                            </p>
+                            <a href="activities.html" class="text-primary font-semibold hover:underline">Learn more →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="activities.html" class="inline-block bg-primary hover:bg-primaryDark text-white font-bold py-3 px-8 rounded-full">
+                        View All Activities <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Preview -->
+        <section class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-4 text-primary">Meet Our Team</h2>
+                <p class="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                    Dedicated individuals working tirelessly to make Umurunga Family's mission a reality.
+                </p>
+                
+                <div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                    <!-- Team Member 1 -->
+                    <div class="team-card bg-white rounded-lg shadow-md p-4 text-center">
+                        <div class=" rounded-full flex items-center justify-center mx-auto mb-4">
+                            <img class="h-60" src="images/NIYIBIZI Irene.png" class="fas fa-user-circle text-primary text-3xl"/>
+                        </div>
+                        <h3 class="font-semibold mb-1 ">NIYIBIZI Irene</h3>
+                        <p class="text-primary  mb-2">Executive Director</p>
+                    </div>
+                    
+                    <!-- Team Member 2 -->
+                    <div class="team-card bg-white rounded-lg shadow-md p-4 text-center">
+                        <div class=" rounded-full flex items-center justify-center mx-auto mb-4">
+                            <img class="h-60" src="images/CYIZA S Guillaine.png" class="fas fa-user-circle text-primary text-3xl"/>
+                        </div>
+                        <h3 class="font-semibold mb-1">CYIZA S Guillaine </h3>
+                        <p class="text-primary text-sm mb-2">Deputy Excutive Director </p>
+                    </div>
+                    
+                    <!-- Team Member 3 -->
+                    <div class="team-card bg-white rounded-lg shadow-md p-4 text-center">
+                        <div class=" rounded-full flex items-center justify-center mx-auto mb-4">
+                            <img class="h-60" src="images/MUGISHA Godfrey.png" class="fas fa-user-circle text-primary text-3xl"/>
+                        </div>
+                        <h3 class="font-semibold mb-1">MUGISHA Godfrey </h3>
+                        <p class="text-primary text-sm mb-2">Head of social welfare &
+       Development </p>
+                    </div>
+                    
+                    <!-- Team Member 4 -->
+                    <div class="team-card bg-white rounded-lg shadow-md p-4 text-center">
+                        <div class="rounded-full flex items-center justify-center mx-auto mb-4">
+                           <img class="h-60" src="images/Amani Esther.png" class="fas fa-user-circle text-primary text-3xl"/>
+                        </div>
+                        <h3 class="font-semibold mb-1">Amani Esther</h3>
+                        <p class="text-primary text-sm mb-2">Deputy Head of social
+welfare & Development </p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="team.html" class="inline-block bg-primary hover:bg-primaryDark text-white font-bold py-3 px-8 rounded-full">
+                        Meet Full Team <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pillars Preview -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto text-center px-4">
+                <h3 class="text-3xl font-semibold mb-8 text-primary">Our Pillars</h3>
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-primary">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-dove text-primary text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-xl mb-2">Sustainable Peace</h4>
+                        <p class="text-gray-700">We work to build peace in communities across Rwanda through dialogue and understanding.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-primary">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-hands-helping text-primary text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-xl mb-2">Youth Trauma Support</h4>
+                        <p class="text-gray-700">Helping youth overcome trauma and find resilience through counseling and community support.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-primary">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-heart text-primary text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-xl mb-2">Fighting Discrimination</h4>
+                        <p class="text-gray-700">Promoting equality and love without bias or prejudice through education and advocacy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-16 bg-primary text-white">
+            <div class="container mx-auto text-center px-4">
+                <h3 class="text-3xl font-semibold mb-4">Make a Difference Today</h3>
+                <p class="text-xl max-w-2xl mx-auto mb-8">Your donation helps us continue our vital work with youth in Rwanda. Every contribution makes an impact.</p>
+                <a href="#" class="inline-block donate-btn bg-white text-primary hover:bg-blue-50 font-bold py-3 px-8 rounded-full text-lg">
+                    Donate Now <i class="fas fa-heart ml-2"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-container"></div>
+
+    <!-- JavaScript to load header and footer -->
+    <script>
+        // Function to load HTML content into an element
+        function loadHTML(id, filename, callback) {
+            const container = document.getElementById(id);
+            if (!container) return;
+            
+            fetch(filename)
+                .then(response => response.text())
+                .then(data => {
+                    container.innerHTML = data;
+                    if (callback) callback();
+                })
+                .catch(error => console.error(`Error loading ${filename}:`, error));
+        }
+
+        // Load header and footer
+        document.addEventListener('DOMContentLoaded', function() {
+            loadHTML('header-container', 'header.html', function() {
+                // Initialize mobile menu functionality after header is loaded
+                const btn = document.getElementById('menu-btn');
+                const menu = document.getElementById('mobile-menu');
+                const closeBtn = document.getElementById('close-menu');
+                
+                if (btn && menu && closeBtn) {
+                    btn.addEventListener('click', () => {
+                        menu.classList.remove('-translate-x-full');
+                    });
+                    
+                    closeBtn.addEventListener('click', () => {
+                        menu.classList.add('-translate-x-full');
+                    });
+                }
+            });
+            
+            loadHTML('footer-container', 'footer.html');
+            
+            // Initialize the hero slider with 3-second transitions
+            initHeroSlider();
+        });
+        
+        // Hero Slider Functionality
+        function initHeroSlider() {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.slider-dot');
+            let currentSlide = 0;
+            const slideInterval = 3000; // 3 seconds
+            
+            function goToSlide(n) {
+                slides[currentSlide].classList.remove('active');
+                dots[currentSlide].classList.remove('active');
+                
+                currentSlide = (n + slides.length) % slides.length;
+                
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+            }
+            
+            // Set up automatic sliding
+            let slideTimer = setInterval(() => {
+                goToSlide(currentSlide + 1);
+            }, slideInterval);
+            
+            // Pause sliding when hovering over slider
+            const slider = document.querySelector('.hero-slider');
+            slider.addEventListener('mouseenter', () => {
+                clearInterval(slideTimer);
+            });
+            
+            // Resume sliding when mouse leaves slider
+            slider.addEventListener('mouseleave', () => {
+                slideTimer = setInterval(() => {
+                    goToSlide(currentSlide + 1);
+                }, slideInterval);
+            });
+            
+            // Add click events to dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    clearInterval(slideTimer);
+                    goToSlide(index);
+                    // Restart timer
+                    slideTimer = setInterval(() => {
+                        goToSlide(currentSlide + 1);
+                    }, slideInterval);
+                });
+            });
+        }
+    </script>
+</body>
+</html>

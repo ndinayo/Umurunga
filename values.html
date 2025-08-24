@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Values - Umurunga Family</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        primaryDark: '#1e40af',
+                        secondary: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .donate-btn {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+        }
+        .donate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(37, 99, 235, 0.4);
+        }
+        .donate-btn:active {
+            transform: translateY(0);
+        }
+        .header-logo {
+            height: 3rem;
+        }
+        @media (min-width: 640px) {
+            .header-logo {
+                height: 4rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .header-logo {
+                height: 5rem;
+            }
+        }
+        .value-card {
+            transition: transform 0.3s ease;
+        }
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+    <!-- Header will be loaded here by JavaScript -->
+    <div id="header-container"></div>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-16">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-center mb-4 text-primary">Our Values</h1>
+            <p class="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                These core values guide everything we do at Umurunga Family, from our internal operations to our community programs.
+            </p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Value 1 -->
+                <div class="value-card bg-white rounded-lg shadow-md p-6 text-center">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-hands-helping text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-primary">Compassion</h3>
+                    <p class="text-gray-700">
+                        We approach every individual and situation with empathy, understanding, and a genuine desire to alleviate suffering.
+                    </p>
+                </div>
+                
+                <!-- Value 2 -->
+                <div class="value-card bg-white rounded-lg shadow-md p-6 text-center">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-primary">Integrity</h3>
+                    <p class="text-gray-700">
+                        We maintain honesty, transparency, and ethical behavior in all our actions and decisions.
+                    </p>
+                </div>
+                
+                <!-- Value 3 -->
+                <div class="value-card bg-white rounded-lg shadow-md p-6 text-center">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-primary">Inclusion</h3>
+                    <p class="text-gray-700">
+                        We embrace diversity and ensure everyone feels valued, respected, and has equal access to opportunities.
+                    </p>
+                </div>
+                
+                <!-- Value 4 -->
+                <div class="value-card bg-white rounded-lg shadow-md p-6 text-center">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-rocket text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-primary">Innovation</h3>
+                    <p class="text-gray-700">
+                        We continuously seek new and creative approaches to address challenges and maximize our impact.
+                    </p>
+                </div>
+                
+                <!-- Value 5 -->
+                <div class="value-card bg-white rounded-lg shadow-md p-6 text-center">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-handshake text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-primary">Collaboration</h3>
+                    <p class="text-gray-700">
+                        We believe in the power of partnership and work together with communities, organizations, and stakeholders.
+                    </p>
+                </div>
+                
+                <!-- Value 6 -->
+                <div class="value-card bg-white rounded-lg shadow-md p-6 text-center">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-seedling text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-primary">Sustainability</h3>
+                    <p class="text-gray-700">
+                        We develop programs that create lasting change and empower communities to continue the work independently.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-blue-50 rounded-lg p-8 max-w-4xl mx-auto">
+                <h2 class="text-2xl font-semibold text-center mb-6 text-primary">Living Our Values</h2>
+                <p class="text-gray-700 text-center">
+                    These values aren't just words on a page—they're the principles that guide our daily work, our decision-making processes, and our interactions with the communities we serve. Every team member at Umurunga Family is committed to embodying these values in everything we do.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-container"></div>
+
+    <!-- JavaScript to load header and footer -->
+    <script>
+        // Function to load HTML content into an element
+        function loadHTML(id, filename, callback) {
+            const container = document.getElementById(id);
+            if (!container) return;
+            
+            fetch(filename)
+                .then(response => response.text())
+                .then(data => {
+                    container.innerHTML = data;
+                    if (callback) callback();
+                })
+                .catch(error => console.error(`Error loading ${filename}:`, error));
+        }
+
+        // Load header and footer
+        document.addEventListener('DOMContentLoaded', function() {
+            loadHTML('header-container', 'header.html', function() {
+                // Initialize mobile menu functionality after header is loaded
+                const btn = document.getElementById('menu-btn');
+                const menu = document.getElementById('mobile-menu');
+                const closeBtn = document.getElementById('close-menu');
+                
+                if (btn && menu && closeBtn) {
+                    btn.addEventListener('click', () => {
+                        menu.classList.remove('-translate-x-full');
+                    });
+                    
+                    closeBtn.addEventListener('click', () => {
+                        menu.classList.add('-translate-x-full');
+                    });
+                }
+            });
+            
+            loadHTML('footer-container', 'footer.html');
+        });
+    </script>
+</body>
+</html>

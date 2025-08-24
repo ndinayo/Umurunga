@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Vision - Umurunga Family</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        primaryDark: '#1e40af',
+                        secondary: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .donate-btn {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+        }
+        .donate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(37, 99, 235, 0.4);
+        }
+        .donate-btn:active {
+            transform: translateY(0);
+        }
+        .header-logo {
+            height: 3rem;
+        }
+        @media (min-width: 640px) {
+            .header-logo {
+                height: 4rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .header-logo {
+                height: 5rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+    <!-- Header will be loaded here by JavaScript -->
+    <div id="header-container"></div>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-16">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-center mb-8 text-primary">Our Vision</h1>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg shadow-md p-8 mb-12">
+                    <div class="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-eye text-primary text-4xl"></i>
+                    </div>
+                    
+                    <p class="text-2xl font-light text-center text-gray-700 italic mb-8">
+                        "We envision a Rwanda where all youth live in peaceful communities, free from trauma and discrimination, united by love and mutual respect."
+                    </p>
+                    
+                    <div class="prose max-w-none">
+                        <h3 class="text-2xl font-semibold text-primary mb-4">Our Future Goals</h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-8 mt-8">
+                            <div class="bg-blue-50 p-6 rounded-lg">
+                                <h4 class="text-lg font-semibold mb-3 text-primary">By 2025</h4>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-star text-primary mt-1 mr-2"></i>
+                                        <span>Establish community centers in 5 districts</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-star text-primary mt-1 mr-2"></i>
+                                        <span>Reach 10,000 youth with our programs</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-star text-primary mt-1 mr-2"></i>
+                                        <span>Train 500 youth peace ambassadors</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-6 rounded-lg">
+                                <h4 class="text-lg font-semibold mb-3 text-primary">By 2030</h4>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-star text-primary mt-1 mr-2"></i>
+                                        <span>Expand to all provinces of Rwanda</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-star text-primary mt-1 mr-2"></i>
+                                        <span>Establish a national youth trauma healing center</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-star text-primary mt-1 mr-2"></i>
+                                        <span>Develop partnerships with international organizations</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-primary text-white rounded-lg p-8 text-center">
+                    <h3 class="text-2xl font-semibold mb-4">Join Us in Realizing This Vision</h3>
+                    <p class="mb-6">Your support can help us build a brighter future for Rwanda's youth</p>
+                    <a href="#" class="inline-block bg-white text-primary hover:bg-blue-50 font-bold py-3 px-8 rounded-full">
+                        Support Our Vision <i class="fas fa-hands-helping ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-container"></div>
+
+    <!-- JavaScript to load header and footer -->
+    <script>
+        // Function to load HTML content into an element
+        function loadHTML(id, filename, callback) {
+            const container = document.getElementById(id);
+            if (!container) return;
+            
+            fetch(filename)
+                .then(response => response.text())
+                .then(data => {
+                    container.innerHTML = data;
+                    if (callback) callback();
+                })
+                .catch(error => console.error(`Error loading ${filename}:`, error));
+        }
+
+        // Load header and footer
+        document.addEventListener('DOMContentLoaded', function() {
+            loadHTML('header-container', 'header.html', function() {
+                // Initialize mobile menu functionality after header is loaded
+                const btn = document.getElementById('menu-btn');
+                const menu = document.getElementById('mobile-menu');
+                const closeBtn = document.getElementById('close-menu');
+                
+                if (btn && menu && closeBtn) {
+                    btn.addEventListener('click', () => {
+                        menu.classList.remove('-translate-x-full');
+                    });
+                    
+                    closeBtn.addEventListener('click', () => {
+                        menu.classList.add('-translate-x-full');
+                    });
+                }
+            });
+            
+            loadHTML('footer-container', 'footer.html');
+        });
+    </script>
+</body>
+</html>
