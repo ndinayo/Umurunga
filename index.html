@@ -45,7 +45,7 @@
             }
         }
         
-        /* Hero Slider Styles */
+        /* Hero Slider Styles - IMPROVED */
         .hero-slider {
             position: relative;
             height: 100vh;
@@ -58,7 +58,7 @@
             width: 100%;
             height: 100%;
             opacity: 0;
-            transition: opacity 1s ease;
+            transition: opacity 1s ease-in-out;
             background-size: cover;
             background-position: center;
             display: flex;
@@ -83,6 +83,13 @@
             color: white;
             max-width: 800px;
             padding: 0 20px;
+            transform: translateY(20px);
+            transition: transform 0.8s ease, opacity 0.8s ease;
+            opacity: 0;
+        }
+        .slide.active .slide-content {
+            transform: translateY(0);
+            opacity: 1;
         }
         .slider-nav {
             position: absolute;
@@ -100,10 +107,38 @@
             background: rgba(255, 255, 255, 0.5);
             margin: 0 5px;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: background 0.3s ease, transform 0.3s ease;
         }
         .slider-dot.active {
             background: white;
+            transform: scale(1.2);
+        }
+        
+        /* Loading indicator */
+        .loader {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+        }
+        .loader:after {
+            content: " ";
+            display: block;
+            width: 64px;
+            height: 64px;
+            margin: 8px;
+            border-radius: 50%;
+            border: 6px solid #fff;
+            border-color: #fff transparent #fff transparent;
+            animation: loader 1.2s linear infinite;
+        }
+        @keyframes loader {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
         /* Card hover effects */
@@ -128,10 +163,13 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Hero Section with Slider -->
+        <!-- Hero Section with Slider - IMPROVED -->
         <section class="hero-slider pt-32">
+            <!-- Loading indicator -->
+            <div id="slider-loader" class="loader" style="display: block;"></div>
+            
             <!-- Slide 1 -->
-            <div class="slide active" style="background-image: url('images/hero3.jpg');">
+            <div class="slide" style="background-image: url('images/hero3.jpg');">
                 <div class="slide-overlay"></div>
                 <div class="slide-content">
                     <h2 class="text-4xl md:text-5xl font-bold mb-4">Building Peace and Unity Among Youth</h2>
@@ -380,6 +418,34 @@ welfare & Development </p>
                 .catch(error => console.error(`Error loading ${filename}:`, error));
         }
 
+        // Preload images function
+        function preloadImages(urls, callback) {
+            let loaded = 0;
+            const toLoad = urls.length;
+            
+            if (toLoad === 0) {
+                callback();
+                return;
+            }
+            
+            urls.forEach(url => {
+                const img = new Image();
+                img.onload = () => {
+                    loaded++;
+                    if (loaded === toLoad) {
+                        callback();
+                    }
+                };
+                img.onerror = () => {
+                    loaded++;
+                    if (loaded === toLoad) {
+                        callback();
+                    }
+                };
+                img.src = url;
+            });
+        }
+
         // Load header and footer
         document.addEventListener('DOMContentLoaded', function() {
             loadHTML('header-container', 'header.html', function() {
@@ -401,16 +467,30 @@ welfare & Development </p>
             
             loadHTML('footer-container', 'footer.html');
             
-            // Initialize the hero slider with 3-second transitions
-            initHeroSlider();
+            // Preload hero images before initializing the slider
+            const heroImages = [
+                'images/hero3.jpg',
+                'images/hero1.jpg',
+                'images/hero2.jpg'
+            ];
+            
+            preloadImages(heroImages, function() {
+                // Hide loader and initialize slider once images are loaded
+                document.getElementById('slider-loader').style.display = 'none';
+                initHeroSlider();
+            });
         });
         
-        // Hero Slider Functionality
+        // Hero Slider Functionality - IMPROVED
         function initHeroSlider() {
             const slides = document.querySelectorAll('.slide');
             const dots = document.querySelectorAll('.slider-dot');
             let currentSlide = 0;
-            const slideInterval = 3000; // 3 seconds
+            const slideInterval = 5000; // Increased to 5 seconds for better viewing
+            
+            // Activate the first slide
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
             
             function goToSlide(n) {
                 slides[currentSlide].classList.remove('active');
