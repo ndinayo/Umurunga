@@ -18,7 +18,7 @@
         </div>
 
         <!-- Desktop menu -->
-        <nav class="hidden md:flex space-x-6 text-primary font-medium">
+        <nav class="hidden md:flex space-x-6 text-primary font-medium items-center">
             <a href="index.html" class="hover:text-primaryDark">Home</a>
             <a href="mission.html" class="hover:text-primaryDark">Mission</a>
             <a href="vision.html" class="hover:text-primaryDark">Vision</a>
@@ -27,33 +27,44 @@
             <a href="team.html" class="hover:text-primaryDark">Team</a>
             <a href="activities.html" class="hover:text-primaryDark">Activities</a>
             <a href="gallery.html" class="hover:text-primaryDark">Gallery</a>
+            <!-- Join Us Button (Only visible on md and above) -->
+            <a href="joinus.html" class="border border-blue-500 text-blue-500 font-bold py-2 px-4 rounded-full text-sm sm:text-base hover:bg-blue-50">
+                Join Us
+            </a>
         </nav>
 
         <!-- Donation Button - visible on all screens -->
         <div class="ml-4">
-            <a href="#" class="donate-btn bg-primary hover:bg-primaryDark text-white font-bold py-2 px-4 rounded-full text-sm sm:text-base flex items-center">
+            <a href="donate.html" class="donate-btn bg-primary hover:bg-primaryDark text-white font-bold py-2 px-4 rounded-full text-sm sm:text-base flex items-center">
                 <i class="fas fa-heart mr-2"></i> Donate
             </a>
         </div>
-    </div>
 
-    <!-- Mobile menu drawer -->
-    <div id="mobile-menu" class="fixed top-0 left-0 h-full w-64 bg-white shadow-md transform -translate-x-full transition-transform duration-300 z-40">
-        <div class="p-4">
-            <button id="close-menu" class="text-primary mb-4 font-medium">Close ✕</button>
-            <nav class="flex flex-col space-y-4 text-primary font-medium">
-                <a href="index.html" class="hover:text-primaryDark">Home</a>
-                <a href="mission.html" class="hover:text-primaryDark">Mission</a>
-                <a href="vision.html" class="hover:text-primaryDark">Vision</a>
-                <a href="pillars.html" class="hover:text-primaryDark">Pillars</a>
-                <a href="values.html" class="hover:text-primaryDark">Values</a>
-                <a href="team.html" class="hover:text-primaryDark">Team</a>
-                <a href="activities.html" class="hover:text-primaryDark">Activities</a>
-                <a href="gallery.html" class="hover:text-primaryDark">Gallery</a>
-                <a href="#" class="bg-primary text-white py-2 px-4 rounded-full text-center mt-4">
-                    <i class="fas fa-heart mr-2"></i> Donate
-                </a>
-            </nav>
+        <!-- Mobile menu drawer -->
+        <div id="mobile-menu" class="fixed top-0 left-0 h-full w-64 bg-white shadow-md transform -translate-x-full transition-transform duration-300 z-40">
+            <div class="p-4">
+                <button id="close-menu" class="text-primary mb-4 font-medium">Close ✕</button>
+                <nav class="flex flex-col space-y-4 text-primary font-medium">
+                    <a href="index.html" class="hover:text-primaryDark">Home</a>
+                    <a href="mission.html" class="hover:text-primaryDark">Mission</a>
+                    <a href="vision.html" class="hover:text-primaryDark">Vision</a>
+                    <a href="pillars.html" class="hover:text-primaryDark">Pillars</a>
+                    <a href="values.html" class="hover:text-primaryDark">Values</a>
+                    <a href="team.html" class="hover:text-primaryDark">Team</a>
+                    <a href="activities.html" class="hover:text-primaryDark">Activities</a>
+                    <a href="gallery.html" class="hover:text-primaryDark">Gallery</a>
+                    
+                    <!-- Donate button -->
+                    <a href="donate.html" class="bg-primary text-white py-2 px-4 rounded-full text-center mt-4">
+                        <i class="fas fa-heart mr-2"></i> Donate
+                    </a>
+
+                    <!-- Join Us button on mobile -->
+                    <a href="joinus.html" class="border border-blue-500 text-blue-500 py-2 px-4 rounded-full text-center mt-2">
+                        Join Us
+                    </a>
+                </nav>
+            </div>
         </div>
     </div>
 </header>

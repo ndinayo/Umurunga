@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Umurunga Family</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        primaryDark: '#1e40af',
+                        secondary: '#3b82f6',
+                        successGreen: '#22c55e',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .donate-box {
+            background-color: #22c55e;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            min-width: 180px;
+        }
+        .contact-form input, .contact-form textarea {
+            border: 1px solid #22c55e;
+            padding: 10px;
+            width: 100%;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        .contact-form button {
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: block;
+            width: 100%;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Header -->
+    <div id="header-container"></div>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-16">
+        <div class="container mx-auto px-4 max-w-md text-center">
+            <h1 class="text-primary font-bold text-lg mb-4">You can now donate Umurunga Family activities</h1>
+            <p class="text-gray-700 text-sm mb-6">
+                Please note! <br>
+                Donation will be received by Our accountant. we are working hard to register our Organisation in different agencies.
+            </p>
+
+            <!-- MTN -->
+            <div class="flex items-center justify-between mb-4">
+                <img src="images/mtn.png" alt="MTN" class="w-16 h-16 object-contain">
+                <span class="donate-box">*182*8*1*1655631#</span>
+            </div>
+
+            <!-- Airtel -->
+            <div class="flex items-center justify-between mb-4">
+                <img src="images/airtel.png" alt="Airtel" class="w-16 h-16 object-contain">
+                <span class="donate-box">0722 727 522</span>
+            </div>
+
+            <!-- Equity -->
+            <div class="flex items-center justify-between mb-4">
+                <img src="images/equity.png" alt="Equity" class="w-16 h-16 object-contain">
+                <span class="donate-box">4005100987307</span>
+            </div>
+
+            <p class="text-gray-800 font-semibold mt-4">Names: Liliane Umutesiwase <span class="text-gray-600 text-sm">(Accountant)</span></p>
+
+           
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- JS to load header and footer -->
+    <script>
+        function loadHTML(id, filename, callback) {
+            const container = document.getElementById(id);
+            if (!container) return;
+
+            fetch(filename)
+                .then(response => response.text())
+                .then(data => {
+                    container.innerHTML = data;
+                    if (callback) callback();
+                })
+                .catch(error => console.error(`Error loading ${filename}:`, error));
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadHTML('header-container', 'header.html', function() {
+                const btn = document.getElementById('menu-btn');
+                const menu = document.getElementById('mobile-menu');
+                const closeBtn = document.getElementById('close-menu');
+                
+                if (btn && menu && closeBtn) {
+                    btn.addEventListener('click', () => {
+                        menu.classList.remove('-translate-x-full');
+                    });
+                    
+                    closeBtn.addEventListener('click', () => {
+                        menu.classList.add('-translate-x-full');
+                    });
+                }
+            });
+
+            loadHTML('footer-container', 'footer.html');
+        });
+    </script>
+</body>
+</html>
