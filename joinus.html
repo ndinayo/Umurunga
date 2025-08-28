@@ -1,95 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Us - Umurunga Family</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#2563eb',
-                        primaryDark: '#1e40af',
-                        secondary: '#3b82f6',
-                    }
-                }
-            }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Us - Umurunga Family</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563eb',
+            primaryDark: '#1e40af',
+            secondary: '#3b82f6',
+          }
         }
-    </script>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        .form-container {
-            width: 100%;
-            height: calc(100vh - 160px); /* Adjusted to leave space for header & footer */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
+      }
+    }
+  </script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .form-container {
+      width: 100%;
+      height: calc(100vh - 160px); /* Adjusted to leave space for header & footer */
+      display: none; /* Hidden until checkbox is ticked */
+      justify-content: center;
+      align-items: center;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
-    <!-- Header -->
-    <div id="header-container"></div>
+  <!-- Header -->
+  <div id="header-container"></div>
 
-    <!-- Main Content -->
-    <main class="pt-32 pb-16">
-        <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold text-center mb-6 text-primary">Join Us</h1>
-            
-            <div class="form-container">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScHpVWGMt_Egw2hyMWqNsGGOZJnsteB7E--hO-vGbLNmvUDnw/viewform?embedded=true" allowfullscreen></iframe>
-            </div>
+  <!-- Main Content -->
+  <main class="pt-32 pb-16">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl font-bold text-center mb-6 text-primary">Join Us</h1>
+
+      <!-- Intro -->
+      <p class="text-center mb-6 text-lg">
+        Please before you start, you have to read more about us. This will help you in your application. 
+        Remember, you will need to accept your reading completion.
+      </p>
+
+      <!-- Read More -->
+      <div class="text-center mb-6">
+        <button id="readMoreBtn" class="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primaryDark">
+          Read More
+        </button>
+      </div>
+
+      <!-- Hidden Full Info -->
+      <div id="fullInfo" class="hidden max-w-3xl mx-auto text-justify space-y-4 p-6 bg-gray-100 rounded-lg shadow">
+        <p><strong>Umurunga Family</strong> is an inclusive and expansive organization based in Rwanda, dedicated to fostering sustainable peace, combating trauma among youth, promoting unconditional love, and fighting all forms of discrimination through nationwide collaborations and initiatives aimed at engaging young people in building a resilient and harmonious society.</p>
+
+        <p>Umurunga Family was founded on May 24, 2024, by a group of young people from different parts of the country who came together with a shared purpose. This united youth group has a mission to preserve peace in the Rwandan community, address trauma among themselves and their peers, and fight all forms of discrimination. They also aim to bring young people together in various activities that support and promote their development, all while fostering inclusive love in society.</p>
+
+        <p>The Umurunga Family is built on the following pillars:</p>
+        <ul class="list-disc pl-6">
+          <li>Building sustainable peace</li>
+          <li>Combating youth trauma</li>
+          <li>Fighting discrimination in society</li>
+          <li>Bringing together youth to support them in all activities that promote their development</li>
+          <li>Building a society founded on unconditional love</li>
+        </ul>
+
+        <p>Umurunga welcomes youth from various regions of the country.</p>
+
+        <p><strong>Criteria for admitting a new member:</strong></p>
+        <ul class="list-disc pl-6">
+          <li>Must be Rwandan</li>
+          <li>Must no longer be in Advanced Level of secondary school (A Level)</li>
+          <li>Must fall within the youth age category</li>
+          <li>Must have a national ID card</li>
+          <li>Must be committed to supporting the organization’s core pillars</li>
+          <li>Must have no history of involvement in any form of discrimination or crimes related to genocide ideology</li>
+          <li>A letter addressed to the Umurunga Family leader requesting membership</li>
+        </ul>
+
+        <p><strong>Mission:</strong><br>
+        To promote sustainable peace, support youth in overcoming trauma, and build a discrimination-free society based on unconditional love.</p>
+
+        <p><strong>Vision:</strong><br>
+        To be a leading organization in building development based on peace, unity, and prioritizing the value of a good quality of life in the wider community.</p>
+
+        <p><strong>Objectives:</strong></p>
+        <ul class="list-disc pl-6">
+          <li>Strengthen collaboration with youth to fight trauma and promote sustainable peace.</li>
+          <li>Encourage unconditional love and mutual respect among all people.</li>
+          <li>Fight all forms of discrimination through awareness campaigns and practical actions.</li>
+          <li>Support programs and initiatives that help youth achieve sustainable development.</li>
+        </ul>
+
+        <p><strong>Values:</strong></p>
+        <ul class="list-disc pl-6">
+          <li>Unconditional love</li>
+          <li>Unity and mutual respect</li>
+          <li>Peace-based development</li>
+          <li>Patience and resilience</li>
+        </ul>
+
+        <!-- Checkbox -->
+        <div class="mt-6">
+          <label class="inline-flex items-center">
+            <input type="checkbox" id="agreeCheckbox" class="mr-2">
+            I agree I've completed to read all.
+          </label>
         </div>
-    </main>
+      </div>
 
-    <!-- Footer -->
-    <div id="footer-container"></div>
+      <!-- Google Form (hidden until checkbox is checked) -->
+      <div class="form-container mt-8" id="formContainer">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScHpVWGMt_Egw2hyMWqNsGGOZJnsteB7E--hO-vGbLNmvUDnw/viewform?embedded=true" allowfullscreen></iframe>
+      </div>
+    </div>
+  </main>
 
-    <!-- JavaScript to load header and footer -->
-    <script>
-        function loadHTML(id, filename, callback) {
-            const container = document.getElementById(id);
-            if (!container) return;
-            
-            fetch(filename)
-                .then(response => response.text())
-                .then(data => {
-                    container.innerHTML = data;
-                    if (callback) callback();
-                })
-                .catch(error => console.error(`Error loading ${filename}:`, error));
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript -->
+  <script>
+    function loadHTML(id, filename, callback) {
+      const container = document.getElementById(id);
+      if (!container) return;
+
+      fetch(filename)
+        .then(response => response.text())
+        .then(data => {
+          container.innerHTML = data;
+          if (callback) callback();
+        })
+        .catch(error => console.error(`Error loading ${filename}:`, error));
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      loadHTML('header-container', 'header.html', function() {
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const closeBtn = document.getElementById('close-menu');
+
+        if (btn && menu && closeBtn) {
+          btn.addEventListener('click', () => {
+            menu.classList.remove('-translate-x-full');
+          });
+
+          closeBtn.addEventListener('click', () => {
+            menu.classList.add('-translate-x-full');
+          });
         }
+      });
 
-        document.addEventListener('DOMContentLoaded', function() {
-            loadHTML('header-container', 'header.html', function() {
-                const btn = document.getElementById('menu-btn');
-                const menu = document.getElementById('mobile-menu');
-                const closeBtn = document.getElementById('close-menu');
-                
-                if (btn && menu && closeBtn) {
-                    btn.addEventListener('click', () => {
-                        menu.classList.remove('-translate-x-full');
-                    });
-                    
-                    closeBtn.addEventListener('click', () => {
-                        menu.classList.add('-translate-x-full');
-                    });
-                }
-            });
-            
-            loadHTML('footer-container', 'footer.html');
-        });
-    </script>
+      loadHTML('footer-container', 'footer.html');
+
+      // Read More button
+      document.getElementById('readMoreBtn').addEventListener('click', function() {
+        document.getElementById('fullInfo').classList.remove('hidden');
+        this.style.display = 'none';
+      });
+
+      // Checkbox toggle
+      document.getElementById('agreeCheckbox').addEventListener('change', function() {
+        const form = document.getElementById('formContainer');
+        if (this.checked) {
+          form.style.display = 'flex';
+        } else {
+          form.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
