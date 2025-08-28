@@ -1,204 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Team - Umurunga Family</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#2563eb',
-                        primaryDark: '#1e40af',
-                        secondary: '#3b82f6',
-                    }
-                }
-            }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team - Umurunga Family</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563eb',
+            primaryDark: '#1e40af',
+            secondary: '#3b82f6',
+          }
         }
-    </script>
-    <style>
-        .donate-btn {
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
-        }
-        .donate-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(37, 99, 235, 0.4);
-        }
-        .donate-btn:active {
-            transform: translateY(0);
-        }
-        .header-logo {
-            height: 3rem;
-        }
-        @media (min-width: 640px) {
-            .header-logo {
-                height: 4rem;
-            }
-        }
-        @media (min-width: 1024px) {
-            .header-logo {
-                height: 5rem;
-            }
-        }
-        .team-member {
-            transition: transform 0.3s ease;
-        }
-        .team-member:hover {
-            transform: translateY(-5px);
-        }
-    </style>
+      }
+    }
+  </script>
+  <style>
+    .team-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .team-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
-    <!-- Header will be loaded here by JavaScript -->
-    <div id="header-container"></div>
+  <!-- Header -->
+  <div id="header-container"></div>
 
-    <!-- Main Content -->
-    <main class="pt-32 pb-16">
-        <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold text-center mb-4 text-primary">Our Team</h1>
-            <p class="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-12">
-                Meet the dedicated individuals who work tirelessly to make Umurunga Family's mission a reality.
-            </p>
-            
-            <!-- Leadership Team -->
-            <div class="mb-16">
-                <h2 class="text-3xl font-semibold text-center mb-8 text-primary">Leadership Team</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    <!-- Team Member 1 -->
-                    <div class="team-member bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-blue-100 flex items-center justify-center">
-                            <i class="fas fa-user-circle text-primary text-6xl"></i>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-1">NIYIBIZI Irene</h3>
-                            <p class="text-primary font-medium mb-3">Executive Director</p>
-                            <p class="text-gray-700 text-sm">
-                                With over 10 years of experience in youth development, Jean leads our organization with vision and passion.
-                            </p>
-                            <div class="flex mt-4 space-x-3">
-                                <a href="#" class="text-blue-500 hover:text-blue-700">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="#" class="text-blue-500 hover:text-blue-700">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#" class="text-blue-500 hover:text-blue-700">
-                                    <i class="fas fa-envelope"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Team Member 2 -->
-                    <div class="team-member bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-blue-100 flex items-center justify-center">
-                            <i class="fas fa-user-circle text-primary text-6xl"></i>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-1">CYIZA S Guillaine </h3>
-                            <p class="text-primary font-medium mb-3">Deputy Excutive Director </p>
-                            <p class="text-gray-700 text-sm">
-                                Marie brings expertise in trauma counseling and community development to our programs.
-                            </p>
-                            <div class="flex mt-4 space-x-3">
-                                <a href="#" class="text-blue-500 hover:text-blue-700">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="#" class="text-blue-500 hover:text-blue-700">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#" class="text-blue-500 hover:text-blue-700">
-                                    <i class="fas fa-envelope"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Team Member 3 -->
-                    <div class="team-member bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-blue-100 flex items-center justify-center">
-                            <i class="fas fa-user-circle text-primary text-6xl"></i>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-1">MUGISHA Godfrey </h3>
-                            <p class="text-primary font-medium mb-3">Head of social welfare &
-       Development </p>
-                            <p class="text-gray-700 text-sm">
-                                Pascal ensures our resources are managed effectively to maximize impact in the communities we serve.
-                            </p>
-                            <div class="flex mt-4 space-x-3">
-                                <a href="#" class="text-blue-500 hover:text-blue-700">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="#" class="text-blue-500 hover:text-blue-700">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#" class="text-blue-500 hover:text-blue-700">
-                                    <i class="fas fa-envelope"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            
-            <!-- Join Team CTA -->
-            <div class="bg-primary text-white rounded-lg p-8 text-center max-w-4xl mx-auto">
-                <h2 class="text-2xl font-semibold mb-4">Join Our Team</h2>
-                <p class="mb-6">We're always looking for passionate individuals to help us make a difference.</p>
-                <a href="#" class="inline-block bg-white text-primary hover:bg-blue-50 font-bold py-3 px-8 rounded-full">
-                    View Open Positions <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-            </div>
+  <!-- Main Content -->
+  <main class="pt-32 pb-16">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl font-bold text-center mb-4 text-primary">Meet Our Leadership Team</h1>
+      <p class="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-12">
+        These are the dedicated leaders working together to achieve Umurunga Family's mission.
+      </p>
+
+      <!-- Team Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+        <!-- Executive Director -->
+        <div class="team-card bg-white rounded-lg shadow-md p-6 text-center">
+          <img class="h-60 mx-auto mb-4" src="images/NIYIBIZI Irene.png" alt="Niyibizi Irene">
+          <h3 class="font-semibold text-lg">Niyibizi Irene</h3>
+          <p class="text-primary text-sm">Executive Director</p>
         </div>
-    </main>
 
-    <!-- Footer will be loaded here by JavaScript -->
-    <div id="footer-container"></div>
+        <!-- Deputy Executive Director -->
+        <div class="team-card bg-white rounded-lg shadow-md p-6 text-center">
+          <img class="h-60 mx-auto mb-4" src="images/CYIZA S Guillaine.png" alt="Cyiza S Guillaine">
+          <h3 class="font-semibold text-lg">Cyiza S Guillaine</h3>
+          <p class="text-primary text-sm">Deputy Executive Director</p>
+        </div>
 
-    <!-- JavaScript to load header and footer -->
-    <script>
-        // Function to load HTML content into an element
-        function loadHTML(id, filename, callback) {
-            const container = document.getElementById(id);
-            if (!container) return;
-            
-            fetch(filename)
-                .then(response => response.text())
-                .then(data => {
-                    container.innerHTML = data;
-                    if (callback) callback();
-                })
-                .catch(error => console.error(`Error loading ${filename}:`, error));
+        <!-- Head of Social Welfare -->
+        <div class="team-card bg-white rounded-lg shadow-md p-6 text-center">
+          <img class="h-60 mx-auto mb-4" src="images/MUGISHA Godfrey.png" alt="Mugisha Godfrey">
+          <h3 class="font-semibold text-lg">Mugisha Godfrey</h3>
+          <p class="text-primary text-sm">Head of Social Welfare & Development</p>
+        </div>
+
+        <!-- Deputy Head -->
+        <div class="team-card bg-white rounded-lg shadow-md p-6 text-center">
+          <img class="h-60 mx-auto mb-4" src="images/Amani Esther.png" alt="Amani Esther">
+          <h3 class="font-semibold text-lg">Amani Esther</h3>
+          <p class="text-primary text-sm">Deputy Head of Social Welfare & Development</p>
+        </div>
+
+        <!-- Secretary -->
+        <div class="team-card bg-white rounded-lg shadow-md p-6 text-center">
+          <img class="h-60 mx-auto mb-4" src="images/UWINEZA Brigitte.png" alt="Uwineza Brigitte">
+          <h3 class="font-semibold text-lg">Uwineza Brigitte</h3>
+          <p class="text-primary text-sm">Secretary</p>
+        </div>
+
+        <!-- Assistant Secretary -->
+        <div class="team-card bg-white rounded-lg shadow-md p-6 text-center">
+          <img class="h-60 mx-auto mb-4" src="images/NIYEZE Arnie.png" alt="Niyeze Annie">
+          <h3 class="font-semibold text-lg">Niyeze Annie</h3>
+          <p class="text-primary text-sm">Assistant Secretary</p>
+        </div>
+
+        <!-- Accountant -->
+        <div class="team-card bg-white rounded-lg shadow-md p-6 text-center">
+          <img class="h-60 mx-auto mb-4" src="images/Umutesiwase Liliane.png" alt="Umutesiswase Liliane">
+          <h3 class="font-semibold text-lg">Umutesiswase Liliane</h3>
+          <p class="text-primary text-sm">Accountant</p>
+        </div>
+
+        <!-- Assistant Accountant -->
+        <div class="team-card bg-white rounded-lg shadow-md p-6 text-center">
+          <img class="h-60 mx-auto mb-4" src="images/Dushime Alliane.png" alt="Dushime Alliane">
+          <h3 class="font-semibold text-lg">Dushime Alliane</h3>
+          <p class="text-primary text-sm">Assistant Accountant</p>
+        </div>
+
+        <!-- Advisor -->
+        <div class="team-card bg-white rounded-lg shadow-md p-6 text-center">
+          <img class="h-60 mx-auto mb-4" src="images/Hirwa Djasir.png" alt="Hirwa Djasil">
+          <h3 class="font-semibold text-lg">Hirwa Djasil</h3>
+          <p class="text-primary text-sm">Permanent Advisor in Family Development</p>
+        </div>
+
+        <!-- Family Disciplinary -->
+        <div class="team-card bg-white rounded-lg shadow-md p-6 text-center">
+          <img class="h-60 mx-auto mb-4" src="images/Mugisha Modeste.png" alt="Mugisha Modeste">
+          <h3 class="font-semibold text-lg">Mugisha Modeste</h3>
+          <p class="text-primary text-sm">Family Disciplinary</p>
+        </div>
+
+        <!-- Assistant Disciplinary -->
+        <div class="team-card bg-white rounded-lg shadow-md p-6 text-center">
+          <img class="h-60 mx-auto mb-4" src="images/Inema G Carmella.png" alt="Imena G Carmella">
+          <h3 class="font-semibold text-lg">Imena G Carmella</h3>
+          <p class="text-primary text-sm">Assistant Disciplinary</p>
+        </div>
+
+        <!-- Family Activities Supervisor -->
+        <div class="team-card bg-white rounded-lg shadow-md p-6 text-center">
+          <img class="h-60 mx-auto mb-4" src="images/Ishimwe Yves.png" alt="Ishimwe Yves">
+          <h3 class="font-semibold text-lg">Ishimwe Yves</h3>
+          <p class="text-primary text-sm">Family Activities Supervisor</p>
+        </div>
+
+      </div>
+
+      <!-- Join Our Team Section -->
+      <div class="bg-primary text-white rounded-lg mt-16 p-10 text-center shadow-md">
+        <h2 class="text-2xl font-bold mb-4">Join Our Team</h2>
+        <p class="mb-6">We're always looking for passionate individuals to help us make a difference.</p>
+        <a href="joinus.html" class="inline-flex items-center px-6 py-3 bg-white text-primary font-semibold rounded-full shadow hover:bg-gray-100 transition">
+          Join Us <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript to load header and footer -->
+  <script>
+    function loadHTML(id, filename, callback) {
+      const container = document.getElementById(id);
+      if (!container) return;
+
+      fetch(filename)
+        .then(response => response.text())
+        .then(data => {
+          container.innerHTML = data;
+          if (callback) callback();
+        })
+        .catch(error => console.error(`Error loading ${filename}:`, error));
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      loadHTML('header-container', 'header.html', function() {
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const closeBtn = document.getElementById('close-menu');
+
+        if (btn && menu && closeBtn) {
+          btn.addEventListener('click', () => {
+            menu.classList.remove('-translate-x-full');
+          });
+          closeBtn.addEventListener('click', () => {
+            menu.classList.add('-translate-x-full');
+          });
         }
-
-        // Load header and footer
-        document.addEventListener('DOMContentLoaded', function() {
-            loadHTML('header-container', 'header.html', function() {
-                // Initialize mobile menu functionality after header is loaded
-                const btn = document.getElementById('menu-btn');
-                const menu = document.getElementById('mobile-menu');
-                const closeBtn = document.getElementById('close-menu');
-                
-                if (btn && menu && closeBtn) {
-                    btn.addEventListener('click', () => {
-                        menu.classList.remove('-translate-x-full');
-                    });
-                    
-                    closeBtn.addEventListener('click', () => {
-                        menu.classList.add('-translate-x-full');
-                    });
-                }
-            });
-            
-            loadHTML('footer-container', 'footer.html');
-        });
-    </script>
+      });
+      
+      loadHTML('footer-container', 'footer.html');
+    });
+  </script>
 </body>
 </html>
