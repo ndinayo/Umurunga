@@ -1,274 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - Umurunga Family</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#2563eb',
-                        primaryDark: '#1e40af',
-                        secondary: '#3b82f6',
-                    }
-                }
-            }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Umurunga Family</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563eb',
+            primaryDark: '#1e40af',
+            secondary: '#3b82f6',
+          }
         }
-    </script>
-    <style>
-        .donate-btn {
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
-        }
-        .donate-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(37, 99, 235, 0.4);
-        }
-        .donate-btn:active {
-            transform: translateY(0);
-        }
-        .header-logo {
-            height: 3rem;
-        }
-        @media (min-width: 640px) {
-            .header-logo {
-                height: 4rem;
-            }
-        }
-        @media (min-width: 1024px) {
-            .header-logo {
-                height: 5rem;
-            }
-        }
-        .gallery-item {
-            transition: transform 0.3s ease;
-            overflow: hidden;
-        }
-        .gallery-item:hover {
-            transform: scale(1.03);
-        }
-        .gallery-img {
-            transition: transform 0.5s ease;
-        }
-        .gallery-item:hover .gallery-img {
-            transform: scale(1.1);
-        }
-    </style>
+      }
+    }
+  </script>
 </head>
 <body class="bg-white text-gray-800 font-sans">
-    <!-- Header will be loaded here by JavaScript -->
-    <div id="header-container"></div>
 
-    <!-- Main Content -->
-    <main class="pt-32 pb-16">
-        <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold text-center mb-4 text-primary">Our Gallery</h1>
-            <p class="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-12">
-                A visual journey through our activities, events, and the impact we're making in communities across Rwanda.
-            </p>
-            
-            <!-- Gallery Filter -->
-            <div class="flex justify-center mb-12">
-                <div class="inline-flex rounded-md shadow-sm">
-                    <button type="button" class="filter-btn px-4 py-2 text-sm font-medium text-white bg-primary rounded-l-lg">
-                        All Photos
-                    </button>
-                    <button type="button" class="filter-btn px-4 py-2 text-sm font-medium text-gray-700 bg-white hover:bg-gray-100">
-                        Events
-                    </button>
-                    <button type="button" class="filter-btn px-4 py-2 text-sm font-medium text-gray-700 bg-white hover:bg-gray-100">
-                        Community Work
-                    </button>
-                    <button type="button" class="filter-btn px-4 py-2 text-sm font-medium text-gray-700 bg-white hover:bg-gray-100 rounded-r-md">
-                        Team
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Gallery Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                <!-- Gallery Item 1 -->
-                <div class="gallery-item rounded-lg shadow-md overflow-hidden">
-                    <div class="h-64 bg-blue-100 flex items-center justify-center">
-                        <i class="fas fa-image text-primary text-5xl"></i>
-                    </div>
-                    <div class="p-4">
-                        <p class="text-gray-700">Community dialogue session in Kigali</p>
-                        <span class="text-sm text-gray-500">October 2023</span>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 2 -->
-                <div class="gallery-item rounded-lg shadow-md overflow-hidden">
-                    <div class="h-64 bg-blue-100 flex items-center justify-center">
-                        <i class="fas fa-image text-primary text-5xl"></i>
-                    </div>
-                    <div class="p-4">
-                        <p class="text-gray-700">Youth leadership training workshop</p>
-                        <span class="text-sm text-gray-500">September 2023</span>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 3 -->
-                <div class="gallery-item rounded-lg shadow-md overflow-hidden">
-                    <div class="h-64 bg-blue-100 flex items-center justify-center">
-                        <i class="fas fa-image text-primary text-5xl"></i>
-                    </div>
-                    <div class="p-4">
-                        <p class="text-gray-700">Annual Unity Festival celebrations</p>
-                        <span class="text-sm text-gray-500">August 2023</span>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 4 -->
-                <div class="gallery-item rounded-lg shadow-md overflow-hidden">
-                    <div class="h-64 bg-blue-100 flex items-center justify-center">
-                        <i class="fas fa-image text-primary text-5xl"></i>
-                    </div>
-                    <div class="p-4">
-                        <p class="text-gray-700">School outreach program in rural areas</p>
-                        <span class="text-sm text-gray-500">July 2023</span>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 5 -->
-                <div class="gallery-item rounded-lg shadow-md overflow-hidden">
-                    <div class="h-64 bg-blue-100 flex items-center justify-center">
-                        <i class="fas fa-image text-primary text-5xl"></i>
-                    </div>
-                    <div class="p-4">
-                        <p class="text-gray-700">Trauma healing workshop participants</p>
-                        <span class="text-sm text-gray-500">June 2023</span>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 6 -->
-                <div class="gallery-item rounded-lg shadow-md overflow-hidden">
-                    <div class="h-64 bg-blue-100 flex items-center justify-center">
-                        <i class="fas fa-image text-primary text-5xl"></i>
-                    </div>
-                    <div class="p-4">
-                        <p class="text-gray-700">Community service day activities</p>
-                        <span class="text-sm text-gray-500">May 2023</span>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 7 -->
-                <div class="gallery-item rounded-lg shadow-md overflow-hidden">
-                    <div class="h-64 bg-blue-100 flex items-center justify-center">
-                        <i class="fas fa-image text-primary text-5xl"></i>
-                    </div>
-                    <div class="p-4">
-                        <p class="text-gray-700">Peace education program graduation</p>
-                        <span class="text-sm text-gray-500">April 2023</span>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 8 -->
-                <div class="gallery-item rounded-lg shadow-md overflow-hidden">
-                    <div class="h-64 bg-blue-100 flex items-center justify-center">
-                        <i class="fas fa-image text-primary text-5xl"></i>
-                    </div>
-                    <div class="p-4">
-                        <p class="text-gray-700">Inter-community sports tournament</p>
-                        <span class="text-sm text-gray-500">March 2023</span>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 9 -->
-                <div class="gallery-item rounded-lg shadow-md overflow-hidden">
-                    <div class="h-64 bg-blue-100 flex items-center justify-center">
-                        <i class="fas fa-image text-primary text-5xl"></i>
-                    </div>
-                    <div class="p-4">
-                        <p class="text-gray-700">Team building retreat for volunteers</p>
-                        <span class="text-sm text-gray-500">February 2023</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Load More Button -->
-            <div class="text-center mt-12">
-                <button class="bg-primary hover:bg-primaryDark text-white font-bold py-3 px-8 rounded-full">
-                    Load More <i class="fas fa-plus-circle ml-2"></i>
-                </button>
-            </div>
-            
-            <!-- Video Section -->
-            <div class="mt-16 max-w-4xl mx-auto">
-                <h2 class="text-3xl font-semibold text-center mb-8 text-primary">Videos</h2>
-                
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Video 1 -->
-                    <div class="bg-blue-100 rounded-lg overflow-hidden">
-                        <div class="h-56 bg-blue-200 flex items-center justify-center">
-                            <i class="fas fa-play-circle text-primary text-5xl"></i>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="font-semibold mb-2">Our Story: Umurunga Family</h3>
-                            <p class="text-gray-700 text-sm">A short documentary about our work and impact</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Video 2 -->
-                    <div class="bg-blue-100 rounded-lg overflow-hidden">
-                        <div class="h-56 bg-blue-200 flex items-center justify-center">
-                            <i class="fas fa-play-circle text-primary text-5xl"></i>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="font-semibold mb-2">Youth Testimonials</h3>
-                            <p class="text-gray-700 text-sm">Hear from young people whose lives have been transformed</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+  <!-- Header will be loaded here by JavaScript -->
+  <div id="header-container"></div>
 
-    <!-- Footer will be loaded here by JavaScript -->
-    <div id="footer-container"></div>
+  <!-- Main Content -->
+  <main class="pt-32 pb-16">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl font-bold text-center mb-4 text-primary">Welcome in our Gallery</h1>
 
-    <!-- JavaScript to load header and footer -->
-    <script>
-        // Function to load HTML content into an element
-        function loadHTML(id, filename, callback) {
-            const container = document.getElementById(id);
-            if (!container) return;
-            
-            fetch(filename)
-                .then(response => response.text())
-                .then(data => {
-                    container.innerHTML = data;
-                    if (callback) callback();
-                })
-                .catch(error => console.error(`Error loading ${filename}:`, error));
+      <!-- Dropdown -->
+      <div class="flex justify-center mb-10">
+        <select id="categorySelect" 
+          class="px-6 py-3 border border-gray-300 rounded-lg text-primary font-semibold bg-white shadow-md">
+          <option value="street">24 May 2025: With Street Children at Kigali city</option>
+          <option value="genocide">25 June 2025: Visited genocide Survivor from Musanze</option>
+          <option value="insurance">26 July 2025: Paid Health insurance for 20 families</option>
+        </select>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"></div>
+    </div>
+  </main>
+
+  <!-- Footer will be loaded here by JavaScript -->
+  <div id="footer-container"></div>
+
+  <script>
+    // 9 images per category
+    const categories = {
+      street: [
+        "https://picsum.photos/id/201/600/400",
+        "https://picsum.photos/id/202/600/400",
+        "https://picsum.photos/id/203/600/400",
+        "https://picsum.photos/id/204/600/400",
+        "https://picsum.photos/id/205/600/400",
+        "https://picsum.photos/id/206/600/400",
+        "https://picsum.photos/id/207/600/400",
+        "https://picsum.photos/id/208/600/400"
+      ],
+      genocide: [
+        "https://picsum.photos/id/211/600/400",
+        "https://picsum.photos/id/212/600/400",
+        "https://picsum.photos/id/213/600/400",
+        "https://picsum.photos/id/214/600/400",
+        "https://picsum.photos/id/215/600/400",
+        "https://picsum.photos/id/216/600/400",
+        "https://picsum.photos/id/217/600/400",
+        "https://picsum.photos/id/218/600/400"
+      ],
+      insurance: [
+        "https://picsum.photos/id/221/600/400",
+        "https://picsum.photos/id/222/600/400",
+        "https://picsum.photos/id/223/600/400",
+        "https://picsum.photos/id/224/600/400",
+        "https://picsum.photos/id/225/600/400",
+        "https://picsum.photos/id/226/600/400",
+        "https://picsum.photos/id/227/600/400",
+        "https://picsum.photos/id/228/600/400"
+      ]
+    };
+
+    // Render gallery
+    function renderGallery(category) {
+      const grid = document.getElementById("galleryGrid");
+      grid.innerHTML = "";
+      categories[category].forEach(img => {
+        grid.innerHTML += `
+          <div class="gallery-item rounded-lg shadow-md overflow-hidden">
+            <img src="${img}" class="gallery-img w-full h-64 object-cover">
+          </div>`;
+      });
+    }
+
+    // Initialize dropdown
+    document.getElementById("categorySelect").addEventListener("change", function() {
+      renderGallery(this.value);
+    });
+
+    // Default load first category
+    renderGallery("street");
+
+    // Load header and footer dynamically
+    function loadHTML(id, filename, callback) {
+      const container = document.getElementById(id);
+      if (!container) return;
+      
+      fetch(filename)
+        .then(response => response.text())
+        .then(data => {
+          container.innerHTML = data;
+          if (callback) callback();
+        })
+        .catch(error => console.error(`Error loading ${filename}:`, error));
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      loadHTML('header-container', 'header.html', function() {
+        // Mobile menu functionality after header is loaded
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const closeBtn = document.getElementById('close-menu');
+        
+        if (btn && menu && closeBtn) {
+          btn.addEventListener('click', () => {
+            menu.classList.remove('-translate-x-full');
+          });
+          closeBtn.addEventListener('click', () => {
+            menu.classList.add('-translate-x-full');
+          });
         }
-
-        // Load header and footer
-        document.addEventListener('DOMContentLoaded', function() {
-            loadHTML('header-container', 'header.html', function() {
-                // Initialize mobile menu functionality after header is loaded
-                const btn = document.getElementById('menu-btn');
-                const menu = document.getElementById('mobile-menu');
-                const closeBtn = document.getElementById('close-menu');
-                
-                if (btn && menu && closeBtn) {
-                    btn.addEventListener('click', () => {
-                        menu.classList.remove('-translate-x-full');
-                    });
-                    
-                    closeBtn.addEventListener('click', () => {
-                        menu.classList.add('-translate-x-full');
-                    });
-                }
-            });
-            
-            loadHTML('footer-container', 'footer.html');
-        });
-    </script>
+      });
+      loadHTML('footer-container', 'footer.html');
+    });
+  </script>
 </body>
 </html>
