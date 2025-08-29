@@ -109,7 +109,6 @@
                     </div>
                 </div>
 
-
             </div>
 
             <div class="text-center mt-12">
@@ -137,7 +136,22 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            loadHTML('header-container', 'header.html');
+            loadHTML('header-container', 'header.html', function() {
+                // ✅ Ensure mobile menu works after header loads
+                const btn = document.getElementById('menu-btn');
+                const menu = document.getElementById('mobile-menu');
+                const closeBtn = document.getElementById('close-menu');
+
+                if (btn && menu && closeBtn) {
+                    btn.addEventListener('click', () => {
+                        menu.classList.remove('-translate-x-full');
+                    });
+                    closeBtn.addEventListener('click', () => {
+                        menu.classList.add('-translate-x-full');
+                    });
+                }
+            });
+
             loadHTML('footer-container', 'footer.html');
         });
     </script>
